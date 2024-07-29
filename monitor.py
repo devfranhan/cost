@@ -30,6 +30,7 @@ start = time.time()
 
 path = "aluno.csv"
 df = bronze(path)
+
 df = df.repartition(2)
 
 # print(df.rdd.getNumPartitions())
