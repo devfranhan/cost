@@ -36,17 +36,17 @@ df = df.repartition(2)
 # df.write.parquet("output/export_{}".format(start))
 # df.show()
 
-# print('Contagem sem null: {}'.format(df.count()))
-# df.show()
+print('Contagem sem null: {}'.format(df.count()))
+df.show()
 
 end = time.time()
 elapsed = end - start
 print('Tempo decorrido: {} segundos.'.format(elapsed))
 Watcher.execstatus()
 
-partition_sizes = Watcher.get_partition_size(df)
-for i, size in enumerate(partition_sizes):
-    print(f"Partição {i}: {size / (1024 * 1024):.2f} MB")
+# partition_sizes = Watcher.get_partition_size(df)
+# for i, size in enumerate(partition_sizes):
+#    print(f"Partição {i}: {size / (1024 * 1024):.2f} MB")
 
 
 # print('Finalizado!')
